@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .small {
+            margin: 0 10px;
+            border: 1px solid #fff;
+        }
+    
+        .small:hover {
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="imgs/1-large.jpg" class="middle" width="430" height="430">
+    </div>
+    <div>
+        <img src="imgs/1-small.jpg" class="small" data-url="imgs/1-large.jpg">
+        <img src="imgs/2-small.jpg" class="small" data-url="imgs/2-large.jpg">
+        <img src="imgs/3-small.jpg" class="small" data-url="imgs/3-large.jpg">
+        <img src="imgs/4-small.jpg" class="small" data-url="imgs/4-large.jpg">
+        <img src="imgs/5-small.jpg" class="small" data-url="imgs/5-large.jpg">
+    </div>
+</body>
+</html>
+<script>
+    var aSmall = document.querySelectorAll(".small");
+    var omiddle = document.querySelector(".middle");
+    for(var i=0;i<aSmall.length;i++){
+        aSmall[i].onmouseover = function(){
+            var src = this.getAttribute("data-url");
+            omiddle.src = src;
+        }
+    }
+</script>

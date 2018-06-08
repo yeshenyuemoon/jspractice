@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>课堂练习</title>
+		<style type="text/css">
+			input {
+				outline: none;
+			}
+			
+			::input-placeholder {
+				color: #ccc;
+			}
+			
+			::-webkit-input-placeholder {
+				color: #ccc;
+			}
+			#box{
+				font-size: 12px;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--1、判断一个整数，属于哪个范围：大于0；小于0；等于0
+
+			2、判断一个整数是偶数还是奇数，并输出判断结果
+			
+			3、字体放大时限制最大为32px，最小为12px
+			
+			4、输入年份，判断是否为闰年
+			
+			5、输入数字，显示星期几
+			
+			6、输入分数，判断成绩等级-->
+		
+			
+			<input type="text" id="intTxt" value="" placeholder="请输入一个整数" />
+			<input type="submit" id="btn" value="点我一下" />
+			<br />
+			<input type="text" id="intTxt2" value="" placeholder="请输入一个整数,判断奇偶" />
+			<input type="submit" id="btn2" value="点我一下" />
+			<br />
+			<div id="box">
+				我是一段文字
+			</div>
+			<input type="submit" id="sfont" value="点我变小" />
+			<input type="submit" id="bfont" value="点我变大" />
+			<br />
+			<input type="text" id="yearTxt"  placeholder="请输入一个年份,判断潤平年" />
+			<input type="submit" id="yearBtn" value="点我一下" />
+			<br />
+			<input type="text" id="source"  placeholder="请输入你的成绩"/>
+			<input type="submit" id="sourceBtn" value="排行" />
+			<br />
+			<input type="text" id="mon"  placeholder="请输入月份"/>
+			<input type="submit" id="monBtn" value="大小月" />
+			<br />
+			<input type="text" id="date"  placeholder="请输入年月日"/>
+			<input type="submit" id="dateBtn" value="第几天呢？？" />
+			<br />
+	</body>
+	<script type="text/javascript">
+		
+		btn.onclick = function() {
+			var val = intTxt.value
+			if(val > 0) {
+				console.log("整数大于零");
+			} else {
+				if(val == 0) {
+					console.log("整数等于零");
+				} else {
+					console.log("整数小于零");
+				}
+			}
+		}
+		btn2.onclick = function() {
+			var val2 = intTxt2.value
+			if(val2 %2 == 0) {
+				console.log("整数是偶数");
+			} else {
+				console.log("整数是奇数");
+			}
+		}
+		sfont.onclick = function() {
+			var val2 = intTxt2.value
+			if(val2 %2 == 0) {
+				console.log("整数是偶数");
+			} else {
+				console.log("整数是奇数");
+			}
+		}
+		bfont.onclick = function() {
+			var val2 = intTxt2.value
+			if(val2 %2 == 0) {
+				console.log("整数是偶数");
+			} else {
+				console.log("整数是奇数");
+			}
+		}
+		var fz = 12;
+		bfont.onclick = function(){
+			if(fz<32){
+				fz++
+			}else{
+				fz;
+			}
+			box.style.fontSize = fz+'px';
+		}
+		sfont.onclick = function(){
+			if(fz>12){
+				fz--
+			}else{
+				fz;
+			}
+			box.style.fontSize = fz+'px';
+		}
+		yearBtn.onclick = function() {
+			var val = yearTxt.value
+			if(val % 400 ==0 ||val % 100 != 0 && val % 4 ==0) {
+				console.log("閏年");
+			} else {
+				console.log("平年");
+			}
+		}
+		sourceBtn.onclick = function(){
+			var n =parseInt(source.value);
+			switch (true){
+				case n<=100&&n>=90 :
+					console.log("成绩为A");
+					break;
+				case  n<=89&&n>=80:
+					console.log("成绩为B");
+					break;
+				case  n<=79&&n>=70:
+					console.log("成绩为C");
+					break;
+				case  n<=69&&n>=60:
+					console.log("成绩为D");
+					break;
+				case  n<=59&&n>=0:
+					console.log("成绩为不及格");
+					break;
+				default:console.log("请重新输入");
+					break;
+			}
+		}
+		monBtn.onclick = function(){
+			var n =parseInt(mon.value);
+			switch (n){
+				case 1 :
+				case 3 :
+				case 5 :
+				case 7 :
+				case 8 :
+				case 10 :
+				case 12 :
+					console.log("大月31天");
+					break;
+				case  2:
+					console.log("小月29天");
+					break;
+				case  4:
+				case  6:
+				case  9:
+				case  11:
+					console.log("小月30天");
+					break;
+				
+				default:console.log("请重新输入");
+					break;
+			}
+		}
+		dateBtn.onclick = function(){
+			var year = parseInt((date.value)/10000);
+			var top;
+			if(year % 400 ==0 ||year % 100 != 0 && year % 4 ==0) {
+				top = 1;
+			} else {
+				top = 0;
+			}
+			var mon = parseInt((date.value)/100) - year*100;
+			var mid;
+			/*switch (mon){
+				case 1 : 
+					mid = 0 ;
+					break;
+				case 2 : 
+					mid = 31 ;
+					break;
+				case 3 :
+					mid = top + 31 + 28 ;
+					break;
+				case 4 :
+					mid = top + 31 + 28 + 31 ;
+					break;
+				case 5 :
+					mid = top + 31 + 28 + 31 +30;
+					break;
+				case 6 :
+					mid = top + 31 + 28 + 31 + 30+31;
+					break;
+				case 7 :
+					mid = top + 31 + 28 + 31+ 30+31+30 ;
+					break;
+				case  8:
+					mid = top + 31 + 28 + 31+ 30+31+30+31 ;
+					break;
+				case  9:
+					mid = top + 31 + 28 + 31+ 30+31+30+31+31 ;
+					break;
+				case  10:
+					mid = top + 31 + 28 + 31+ 30+31+30+31+31+30 ;
+					break;
+				case  11:
+					mid = top + 31 + 28 +  31+ 30+31+30+31+31+30+31 ;
+					break;
+				case  12:
+					mid = top + 31 + 28 + 31+ 30+31+30+31+31+30+31+30 ;
+					break;
+				
+				default:console.log("请重新输入年月日，注意月份是两位数");
+					break;
+			}
+			var day =parseInt(date.value - (parseInt((date.value)/100)*100)) ;
+			var bottom = mid + day ;
+			console.log(bottom);
+			
+			 */
+			var day =parseInt(date.value - (parseInt((date.value)/100)*100)) ;
+			switch (mon){
+				case 12 : 
+					day += 30 ;
+				case 11 : 
+					day += 31 ;
+					
+				case 10 :
+					day += 30 ;
+				case 9 :
+					day += 31 ;
+				case 8 :
+					day += 31 ;
+				case 7 :
+					day += 30 ;
+				case 6 :
+					day += 31 ;
+				case  5:
+					day += 30 ;
+				case  4:
+					day += 31 ;
+				case  3:
+					day += 28+top ;
+				case  2:
+					day += 31 ;
+				case  1:
+					 ;
+					console.log("这是第"+day+"天");
+					break;
+				
+				default:console.log("请重新输入年月日，注意月份是两位数");
+					break;
+			}
+			
+			
+		}
+	</script>
+
+</html>

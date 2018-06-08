@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var str = "aa5256bsdgdgbcc啦啦啦啦sdgddssd爱国dd";
+    function strA(str) {
+        
+        var obj = [];
+        for (var i = 0; i < str.length; i++) {
+            var char = str.charAt(i);
+            var n = obj[char];
+            if (!n) {
+                n = 1;
+                obj[char] = 1;
+            } else {
+                n++;
+                obj[char] = n;
+            }
+        }
+       return obj;
+    }
+    console.log(strA(str));
+    /****************字符串去重****************/
+    function obj(str) {
+        var a = "";
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var char = str.charAt(i)
+            if (!obj[char]) {
+                obj[char] = 1;
+            } else {
+                obj[char]++
+            }
+        }
+        for (var key in obj) {
+            console.log(key + "出现了" + obj[key] + "次")
+            a += key
+
+        }
+        return a
+    }
+    console.log(obj(str));
+</script>

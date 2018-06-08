@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #box{width: 100px;height: 100px;position: absolute;top: 0px;left: 0px;background:red;}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
+<script>
+    //匀速运动 左上角移动至右下角
+    var oBox = document.getElementById("box");
+    var l = 0;
+    var t = 0;
+    var timer = null;
+    var iw = document.documentElement.clientWidth-oBox.offsetWidth;
+    var ih = document.documentElement.clientHeight-oBox.offsetHeight;
+
+    oBox.onmouseover = function() {
+        clearInterval(timer);
+        timer = setInterval(function(){
+            l += 8;
+            t = l*(ih/iw);
+
+            if(l>=iw || t>=ih){
+                clearInterval(timer);
+            }else{
+                oBox.style.left = l +'px';
+                oBox.style.top = t +'px';
+            }
+        },30)
+    }
+</script>

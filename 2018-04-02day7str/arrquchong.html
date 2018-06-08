@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /****************第一种数组去重****************/
+        function noR(arr){
+            var res = [];
+            var json = {};
+            for (var i = 0; i < arr.length; i++) {
+                if (!json[arr[i]]) {
+                    res.push(arr[i]);
+                    json[arr[i]] = 1;
+                }
+            }
+            return res;
+        }
+        var arr = [112, 112, 34, '你好', 112, 112, 34, '你好', 'str', 'str1'];
+        console.log(arr);
+        var newArr;
+        noR(arr);
+        newArr = noR(arr);
+        console.log(newArr);
+        console.dir(newArr);
+    /****************第二种数组去重****************/
+        function bstop(arr,num){
+            var bstop = false;
+            for(i in arr){
+                if(arr[i]==num){
+                    bstop = true;
+                    break;
+                }
+            }
+            return bstop;
+        }
+        function noR1(arr){
+            var newArr = [];
+            for(var i in arr){
+                if(!bstop(newArr,arr[i])){
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr;
+        }
+        var arr1 = [112, 112, 34, '你好', 112, 112, 34, '你好', 'str', 'str1'];
+        console.log(arr1);
+        var newArr1 = noR1(arr1);
+        console.log(newArr1);
+        console.dir(newArr1);
+    /****************第三种数组去重****************/
+            
+            function indexOf(arr) {
+                var newArr = [];
+                for (var i = 0; i < arr.length; i++) {
+                    if (newArr.indexOf(arr[i]) == -1) {
+                        newArr.push(arr[i])
+                    }
+                }
+                return newArr
+            }
+
+</script>

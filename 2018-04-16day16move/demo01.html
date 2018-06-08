@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    
+        #box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            background: red
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="btn">开始运行</button>
+</body>
+</html>
+<script>
+    //运动原理 匀速运动
+    var timer = null;
+    var oBtn = document.getElementById("btn");
+    var oBox = document.getElementById("box");
+    var iW = 100;
+    oBtn.onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            iW += 2;
+            if (iW >= 500) {
+                clearInterval(timer)
+            } else {
+                oBox.style.width = iW + "px";
+            }
+        }, 30)
+    }
+</script>

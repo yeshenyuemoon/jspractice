@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">创建</button>
+    <button id="btn2">洗牌</button>
+    <button id="btn3">发牌</button>
+    <div id="content"></div>
+</body>
+</html>
+<script>
+    function createPuke(){
+        var arr = [];
+        for(var i=1;i<=4;i++){
+            for(var j=1;j<=13;j++){
+                arr.push("<img src=puke/"+i+"/"+j+".jpg>");
+            }
+        }
+        return arr;
+    }
+    function sortPuke(arr){
+        var newArr = arr.sort(function(){
+            return Math.random()-0.5;
+        })
+        return newArr;
+    }
+
+    var arr1,arr2;
+    var count = 0;
+    btn1.onclick = function(){
+        arr1 = createPuke();
+        console.log(arr1);
+    }
+    btn2.onclick = function(){
+        arr2 = sortPuke(arr1);
+        console.log(arr1);
+        console.log(arr2);
+    }
+    btn3.onclick = function(){
+        if(count==52){
+           
+        }else{
+            content.innerHTML += arr2[count];
+            count++;
+        }
+        
+    }
+</script>

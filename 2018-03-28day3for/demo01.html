@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!--
+			1、打印100以内7的倍数
+		
+			2、打印100以内的奇数
+			
+			3、计算100以内所有偶数的和
+			
+			4、入职薪水10K，每年涨幅5%，50年后工资多少？
+			
+			5、打印100-200以内能被3 或 7整除的数字
+			
+			6、生成一个随机概率，要求概率必须大于70%，否则重新生成
+			
+		-->
+
+	</body>
+	<script type="text/javascript">
+		/* 	1、打印100以内7的倍数
+			var num = 1;
+			//循环的条件
+			while(num<=100){
+				//判断的条件
+				if(num%7 == 0){
+					console.log(num);
+				}
+				num++;
+			}
+			2、打印100以内的奇数
+			var n = 1;
+			while(n<=100){
+				if(n%2 !=0){
+					console.log(n);
+				}
+				n++;
+			}
+			3、计算100以内所有偶数的和
+			var n = 0 ;
+			var sum = 0;
+			
+			while(n<=100){
+				if(n%2 ==0){
+					sum +=n
+				}
+				n++;
+			}
+			console.log(sum);
+			4、入职薪水10K，每年涨幅5%，50年后工资多少？
+			var year = 1 ;
+			var sum = 15000;
+			while(year <= 50){
+				sum *=1.05
+				n++;
+			}
+			console.log(sum);
+			5、打印100-200以内能被3 或 7整除的数字
+			var num = 100;
+			while(num<=200){
+				if(num%7 == 0||num%3 == 0){
+					console.log(num);
+				}
+				num++;
+			}
+			6、生成一个随机概率，要求概率必须大于70%，否则重新生成
+		    var numb = 0;
+			//循环的条件
+			while(numb<=.7){
+			//判断的条件
+			
+				numb=Math.random();
+			
+			
+			}console.log(numb)
+			
+			 */
+			
+			
+			/*
+			1、计算10的阶乘  10*9*8*7...*1
+			var result = 1;
+			for(var i=10;i>=1;i--){
+				result*=i;
+			}
+			console.log(result)
+
+			2、计算1+3+5....99的和
+			var result = 0;
+			for(var i=1;i<=50;i++){
+				
+				result+=2*i-1;
+			}
+			console.log(result)
+			
+			3、求100-999直接的水仙花数。1^3 + 5^3+ 3^3 = 153 //数学上面的之和
+			for(var i=100;i<=999;i++){
+				var bai = parseInt( i/100 );
+				var shi = parseInt( i%100 / 10);
+				var ge = parseInt( i%10 );
+				if(i == Math.pow(bai,3) + Math.pow(shi,3) + Math.pow(ge,3)){
+					console.log(i);
+				}
+				
+			}
+			4、求1-1/2+1/3-1/4.........1/100的和
+			
+			 
+			 
+			*/
+			var sum=0;
+			for(var i=1;i<=100;i++){
+				if(i%2 != 0){
+					sum+=1/i
+				}else{
+					sum-=1/i
+				}
+			}
+			console.log(sum)
+			
+			
+
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+</body>
+</html>
+<script>
+    var str = "12345 bbbbb";
+    var count = 0;
+    console.log(str.length);
+    for(var i=0;i<str.length;i++){
+        var char=str.charCodeAt(i);
+        console.log(char);
+        if(char >= 48 && char <= 57){
+            count++;
+        }
+    }
+    console.log(count);
+
+    
+
+    txt.onblur = function(){
+        var str = txt.value;
+        var char = str.charCodeAt(0);
+        if(char>=48&&char<=57){
+            prompt("首字母不能为数字");
+        }else{
+            prompt("输入正确");
+        }
+    }
+
+</script>

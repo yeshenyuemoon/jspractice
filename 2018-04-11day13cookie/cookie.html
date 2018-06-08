@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="closeTimerId" id="btn">
+</body>
+</html>
+
+<script>
+    var btn = document.getElementById("btn");
+            var timerId = setTimeout(function () {
+            alert("23333");
+            
+        }, 3000);
+            btn.onclick = function () {
+            //在设置的时间之前（3s内）点击可以取消定时器
+            clearTimeout(timerId);
+            
+        }
+</script>

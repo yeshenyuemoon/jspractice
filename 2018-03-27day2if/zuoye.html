@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <label for="height"><p>请输入你的身高（cm）</p></label>
+    
+    <input type="text" id="height">
+    <label for="weight"><p>请输入你的体重(500g)</p></label>
+    
+    <input type="text" id="weight">
+    <input type="submit" id="go">
+    <p id="result"></p>
+</body>
+<script>
+    /* 开发一款软件，根据公式（身高 - 108）* 2=体重，可以有10斤左右的浮动。来观察测试者体重是否合格 */
+    go.onclick = function(){
+        var val1 = height.value;
+        var val2 = weight.value;
+        if(Math.abs(parseInt((val1-108)*2-val2))<=10){
+            result.innerHTML = "体重及格";
+        }else{
+            result.innerHTML = "体重不及格";
+        }
+    }
+    for(var i = 0;i < 10; i++){
+         setTimeout(function(){ 
+             result.innerHTML =  i++; 
+            }, i*1000) 
+    }
+   /*  for (var i = 0; i <10; i++) {
+            (function(j){
+                setTimeout(function timer() {
+                    console.log(j);
+                },i* 1000);    
+            })(i);
+        } */
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    ul{width: 1100px;margin: 20px auto;}
+    ul,li{list-style:none;}
+    ul>li{width: 210px;border: 1px solid #c2c2c2;box-shadow: 3px 3px 3px #ccc;float: left;margin: 0 20px;}
+    ul>li>img{width: 150px;}
+    ul>li>p:nth-of-type(2){color: red}
+    ul>li>p:nth-of-type(3){color: red}
+    </style>
+</head>
+<body>
+    <ul id="content">
+        <li>
+            <!-- <img src="//img14.360buyimg.com/n1/s150x150_jfs/t12925/165/2348366819/274934/bd91bd3a/5a3b9080N24a5da4f.jpg" alt="">
+            <p>机械革命（MECHREVO）X7Ti-S GTX1060 6G 15.6英寸游戏笔记本电脑 i7-7700HQ 8G 128GSSD+1T 4K 机械键盘</p>
+            <p>¥7988.00</p>
+            <p>991人已购买</p> -->
+        </li>
+    </ul>
+</body>
+<script>
+var obj = [
+    {
+        img:"https://img14.360buyimg.com/n1/s150x150_jfs/t12925/165/2348366819/274934/bd91bd3a/5a3b9080N24a5da4f.jpg",
+        title:"机械革命（MECHREVO）X7Ti-S GTX1060 6G 15.6英寸游戏笔记本电脑 i7-7700HQ 8G 128GSSD+1T 4K 机械键盘",
+        price:"¥7988.00",
+        content:"991人已购买"
+    },
+    {
+        img:"https://img14.360buyimg.com/n1/s150x150_jfs/t12925/165/2348366819/274934/bd91bd3a/5a3b9080N24a5da4f.jpg",
+        title: "机械革命（MECHREVO）X7Ti-S GTX1060 6G 15.6英寸游戏笔记本电脑 i7-7700HQ 8G 128GSSD+1T 4K 机械键盘",
+        price: "¥7988.00",
+        content: "991人已购买"
+    },
+    {
+        img:"https://img14.360buyimg.com/n1/s150x150_jfs/t12925/165/2348366819/274934/bd91bd3a/5a3b9080N24a5da4f.jpg",
+        title: "机械革命（MECHREVO）X7Ti-S GTX1060 6G 15.6英寸游戏笔记本电脑 i7-7700HQ 8G 128GSSD+1T 4K 机械键盘",
+        price: "¥7988.00",
+        content: "991人已购买"
+    },
+    {
+        img:"https://img14.360buyimg.com/n1/s150x150_jfs/t12925/165/2348366819/274934/bd91bd3a/5a3b9080N24a5da4f.jpg",
+        title: "机械革命（MECHREVO）X7Ti-S GTX1060 6G 15.6英寸游戏笔记本电脑 i7-7700HQ 8G 128GSSD+1T 4K 机械键盘",
+        price: "¥7988.00",
+        content: "991人已购买"
+    }]
+var str = "";
+for(var i=0;i<obj.length;i++){
+    str+="<li><img src="+obj[i].img+"><p>"+obj[i].title+"</p><p>"+obj[i].price+"</p><p>"+obj[i].content+"</p>";
+}
+content.innerHTML = str;
+</script>
+</html>

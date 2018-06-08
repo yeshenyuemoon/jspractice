@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body style="height:3000px;">
+    <div id="box"></div>
+</body>
+</html>
+<script>
+    //回到顶部
+    var oBox = document.getElementById("box");
+    var timer = null;
+    var iH = document.documentElement.clientHeight;
+    //获得的是屏幕可视区域的宽高，不包括滚动条与工具条
+    oBox.style.top = iH/2-oBox.offsetHeight/2+"px";
+    //设置元素的顶部距离为屏幕可视区域的中间
+    document.onscroll = function(){
+        var iT = document.documentElement.scrollTop || document.body.scrollTop;
+        //chrome居然不认识document.documentElement.scrollTop！兼容
+        var iTarget = iH/2-oBox.offsetHeight/2+iT;
+        console.log(iT)
+        //设置元素的顶部距离为屏幕可视区域的中间加上滚轮顶部距离即可以可视区域上下移动//也能居中
+        move(oBox,iTarget);
+    }
+    function move(obj,iTarget){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed = (iTarget-obj.offsetTop)/8;
+            speed = speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(obj.offsetTop == iTarget){
+                clearInterval(timer)
+            }else{
+                obj.style.top = obj.offsetTop+speed+"px"
+            }
+        },30)
+    }
+    /*
+	1、关闭定时器
+	2、开启定时器
+	3、算速度
+	4、速度取整
+	5、判断终止条件
+	6、else运动条件
+
+
+ */
+</script>

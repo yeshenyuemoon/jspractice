@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = [9, 8, 7, 6, 5];
+    function maobaoSort(arr) {
+        var temp;
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var k = 0; k < arr.length - i - 1; k++) {
+                if (arr[k] > arr[k + 1]) {
+                    temp = arr[k];
+                    arr[k] = arr[k + 1];
+                    arr[k + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+       
+    var newArr = maobaoSort(arr)
+    console.log(newArr);
+</script>

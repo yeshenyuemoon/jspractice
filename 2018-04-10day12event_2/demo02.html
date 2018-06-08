@@ -1,0 +1,65 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            #a {
+                width: 300px;
+                height: 300px;
+                background-color: red;
+            }
+    
+            #b {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+            }
+    
+            #c {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="a">
+            <div id="b">
+                <div id="c"></div>
+            </div>
+        </div>
+        <script>
+            var a = document.getElementById("a");
+            var b = document.getElementById("b");
+            var c = document.getElementById("c");
+            c.addEventListener("click", function () {
+                console.log("c:冒泡");
+            }, false);
+            c.addEventListener("click", function () {
+                console.log("c:捕获:1");
+            }, true);
+            c.addEventListener("click", function () {
+                console.log("c:捕获:2");
+            }, true);
+            c.addEventListener("click", function () {
+                console.log("c:冒泡:2");
+            }, false);
+            c.addEventListener("click", function () {
+                console.log("c:捕获:3");
+            }, true);
+            b.addEventListener("click", function () {
+                console.log("b:冒泡");
+            }, false);
+            b.addEventListener("click", function () {
+                console.log("b:捕获");
+            }, true);
+        </script>
+    </body>
+    
+    </html>

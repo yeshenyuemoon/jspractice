@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div style="width:1px;height:300px;position:absolute;top:0;left:600px;background:#000"></div>
+    <textarea name="" id="txt" cols="80" rows="40"></textarea>
+</body>
+</html>
+<script>
+    //缓冲运动
+    var oBox = document.getElementById("box");
+    var timer = null;
+    document.onclick = function(){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed = (600-oBox.offsetLeft)/10;
+            speed = speed>0?Math.ceil(speed):Math.floor(speed);
+            
+            if(oBox.offsetLeft == 600){
+                clearInterval(timer)
+            }else{
+                oBox.style.left = oBox.offsetLeft+speed+"px";
+                txt.innerHTML += speed+"left"+oBox.offsetLeft+"\n";
+                console.log(speed)
+            }
+        },30)
+    }
+</script>

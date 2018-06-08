@@ -1,0 +1,21 @@
+.content{
+    width: 1130px;
+    margin: 0 auto;
+}
+.clearfix:after{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.txtempty{
+    width: 100%;
+    white-space: nowrap;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+hearder>#logo{
+    display: block;
+}

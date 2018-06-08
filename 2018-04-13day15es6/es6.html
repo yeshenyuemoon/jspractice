@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            position: relative;
+        }
+
+        #nav-wrapper {
+            height: 48px;
+            width: 100%;
+            position: relative;
+        }
+
+        #nav-wrapper>#nav {
+            margin: 19px 0 5px;
+            background: #fff;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #nav-wrapper>#nav>a {
+            line-height: 24px;
+            font-weight: 700;
+            font-size: 13px;
+            color: #333;
+            float: left;
+            margin-left: 20px;
+        }
+
+        #nav-wrapper>#nav>a:nth-child(9) {
+            background: #38f;
+            color: #fff;
+            display: block;
+            width: 60px;
+            height: 23px;
+            margin-right: 2px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        #logo-wrapper {
+            width: 100%;
+        }
+
+        #logo-wrapper>#logo {
+            margin: 0 auto;
+            width: 270px;
+            height: 129px;
+        }
+
+        #logo>img {
+            width: 270px;
+            height: 129px;
+        }
+
+        #fm {
+            margin: 22px auto 0;
+            height: 40px;
+            width: 641px;
+            position: relative;
+        }
+
+        #fm>#txt {
+            width: 85%;
+            height: 34px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #fm>#btn {
+            width: 14%;
+            height: 37px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #filter {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(51, 51, 51, 0.281);
+            display: none;
+        }
+
+        #filter>#box {
+            width: 356px;
+            height: 429px;
+            display: none;
+            background: rgb(241, 171, 18);
+            position: absolute;
+        }
+        #filter>#box p{
+            line-height: 30px;
+        }
+        #filter>#box>form>p{
+            margin-top: 30px;
+        }
+        #filter>#box>#header{
+            display: block;
+            width: 100%;
+            height: 30px;
+            background: #fff;
+            cursor: move;
+        }
+        #filter>#box>#header>.icon-close{
+            float: right;
+            font-size: 18px;
+            line-height: 30px;
+            margin-right: 10px;
+            color: black;
+            cursor: pointer;
+        }
+        #filter>#box>#header>.icon-close:hover{
+            color: rgba(0, 0, 0, 0.342);
+        }
+        #filter>#box>form>input{
+            float: right;
+            margin-right: 20px;
+        }
+        #filter>#box>form>label{
+            margin-left: 10px;
+        }
+        #filter>#box>form>span{
+            margin-left: 10px;
+        }
+        #filter>#box>form>div{
+            float: right;
+            margin-right: 20px;
+        }
+        #filter>#box>form>div>span{
+            display: block;
+            width: 40px;
+            height: 18px;
+            background: #fff;
+            color: rgb(241, 171, 18);
+            float: left;
+            text-align: center;
+            margin: 0 8px;
+        }
+        #filter>#box>form>#subm{
+            float: left;
+            margin-left: 50px;
+        }
+        #filter>#box>form>#nologin{
+            float: left;
+            margin:5px 0 0 50px;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <div id="nav-wrapper">
+        <div id="nav">
+            <a href="#">新闻</a>
+            <a href="#">hao123</a>
+            <a href="#">地图</a>
+            <a href="#">视频</a>
+            <a href="#">贴吧</a>
+            <a href="#">学术</a>
+            <a href="#" id="login">登陆</a>
+            <a href="#">设置</a>
+            <a href="#">更多产品</a>
+        </div>
+    </div>
+    <div id="logo-wrapper">
+        <div id="logo">
+            <img src="images/logo.png">
+        </div>
+    </div>
+    <form id="fm">
+        <input type="text" id="txt">
+        <input type="button" id="btn" value="百度一下">
+    </form>
+    <div id="filter">
+        <div id="box">
+            <div id="header">
+                <span id="close" class="iconfont icon-close"></span>
+            </div>
+            <p>&emsp;账户详细资料</p>
+            <form>
+                <label for="usename">用户名称</label>
+                <input type="text" id="usename"><br>
+                <label for="passw">登陆密码</label>
+                <input type="text" id="passw"><br>
+                <label for="repassw">重复登陆密码</label>
+                <input type="text" id="repassw"><br>
+                <span>密码安全级别</span>
+                <div id="safelevel">
+                    <span>低</span>
+                    <span>中</span>
+                    <span>高</span>
+                </div>
+            
+            <p>&emsp;个人信息资料</p>
+            
+                <label for="email">电子邮件</label>
+                <input type="text" id="email"><br>
+                <label for="realn">真实姓名</label>
+                <input type="text" id="realn"><br>
+                <label for="phone">中奖通知手机</label>
+                <input type="text" id="phone"><br>
+                <label for="vercoder">验证码</label>
+                <input type="text" id="vercoder"><br>
+                
+            
+                <input type="submit" value="注册" id="subm">
+                <input type="checkbox" id="nologin">十天内免登陆
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+var login = document.getElementById("login");
+var oFilter = document.getElementById("filter");
+var oBox = document.getElementById("box");
+var header = document.getElementById("header");
+var close = document.getElementById("close");
+//窗口弹出
+login.onclick = function(){
+    
+    oFilter.style.display = "block";
+    oBox.style.display = "block";
+    
+    var hW = oFilter.offsetWidth / 2 - oBox.offsetWidth / 2;
+    var hH = oFilter.offsetHeight / 2 - oBox.offsetHeight / 2;
+
+    oBox.style.left = hW + 'px';
+    oBox.style.top = hH + 'px';
+    
+    console.log(header, close);
+    close.onclick = function () {
+        oFilter.style.display = "none";
+        oBox.style.display = "none";
+    }
+   
+}
+
+
+
+//窗口移动拖拽
+header.onmousedown = function(e){
+    var e= e||event;
+    var xOne = e.clientX;
+    var yOne = e.clientY;
+
+    var x = oBox.offsetLeft;
+    var y = oBox.offsetTop;
+
+    e.preventDefault?e.preventDefault():returnValue = false;
+    document.onmousemove = function(){
+        
+        var ow = oFilter.offsetWidth - oBox.offsetWidth;
+        var oh = oFilter.offsetHeight - oBox.offsetHeight;
+
+        var e = e||event;
+        var l = e.clientX+x-xOne;
+        var t = e.clientY+y-yOne;
+        l = l>ow?ow:(l<0?0:l);
+        t = t>oh?oh:(t<0?0:t);
+        oBox.style.left = l+'px';
+        oBox.style.top = t+'px';
+    }
+
+    document.onmouseup = function(){
+        document.onmousemove = null;
+        document.onmouseup = null;
+    }
+}
+//各项input正则匹配
+    //用户名
+    var regusername = /^[a-z0-9_-]{3,16}$/;
+    var ousername = document.getElementById("usename");
+    console.log(ousername);
+    ousername.onblur = function(){
+        
+        var val = ousername.value;
+        if(regusername.test(val)){
+            alert("用户名输入正确");
+        }else{
+            alert("用户名输入错误，请重新输入。（用户名为3-16位 不含大写 首字符不能为除下划线及杆号以外字符）");
+            val = null;
+        }
+    }
+    console.log(ousername.onblur);
+    //密码重复验证
+    var repassw = document.getElementById("repassw");
+    //密码强度
+    var reg = /^\d+$/;
+    var reg1 = /^[a-zA-Z]+$/
+    var reg2 = /^[a-zA-Z][a-zA-Z\d]+$/
+    var reg3 = /^\w[a-z]+$/
+    var oPassw = document.getElementById("passw");
+    var oSpan = document.getElementById("safelevel");
+    console.log(oSpan.children[0]);
+    oPassw.onblur = function () {
+        var val = oPassw.value;
+
+        if (reg.test(val) || reg1.test(val)) {
+            alert("密码强度弱"); 
+            oSpan.children[0].style.background = "#f44336";
+            oSpan.children[0].style.color = 'white';
+            oSpan.children[1].style.background = "#fff";
+            oSpan.children[1].style.color = 'rgb(241, 171, 18)';
+            oSpan.children[2].style.background = "#fff";
+            oSpan.children[2].style.color = 'rgb(241, 171, 18)';
+            
+        } else if (reg2.test(val)) {
+            alert("密码强度中");
+            oSpan.children[0].style.background = "#fff"; 
+            oSpan.children[0].style.color = 'rgb(241, 171, 18)';
+            oSpan.children[1].style.background = "#f44336";
+            oSpan.children[1].style.color = 'white';
+            oSpan.children[2].style.background = "#fff"; 
+            oSpan.children[2].style.color = 'rgb(241, 171, 18)';
+            
+        } else if (reg3.test(val)) {
+            alert("密码强度高");
+            oSpan.children[0].style.background = "#fff";
+            oSpan.children[0].style.color = 'rgb(241, 171, 18)';
+            oSpan.children[1].style.background = "#fff";
+            oSpan.children[1].style.color = 'rgb(241, 171, 18)';
+            oSpan.children[2].style.background = "#f44336";
+            oSpan.children[2].style.color = 'white';
+            
+        }
+    }
+</script>
+</html>

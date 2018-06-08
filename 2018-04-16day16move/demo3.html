@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #parent {
+        width: 200px;
+        height: 200px;
+        background: #ccc;
+        position: absolute;
+        left: -200px;
+    }
+
+    #parent>span {
+        position: absolute;
+        left: 200px;
+        background: pink;
+        height: 80px;
+        padding-top: 20px;
+        top: 40px;
+        width: 30px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="parent">
+        <span>分享到</span>
+    </div>
+</body>
+</html>
+<script>
+    //移出移入分享事件
+    var oPar = document.getElementById('parent');
+    var timer = null;
+
+    oPar.onmouseover = function(){
+        move1(this);
+    }
+    oPar.onmouseout = function(){
+        move2(this);
+    }
+    function move1(obj){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var l = 0;
+            l+=5;
+            if(obj.offsetLeft >= 0){
+                clearInterval(timer);
+            }else{
+                obj.style.left = obj.offsetLeft + l +'px';
+            }
+        },30)
+    }
+    function move2(obj) {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var l = 0;
+                l -= 5;
+                if (obj.offsetLeft <= -200) {
+                    clearInterval(timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + l + 'px';
+                }
+            }, 30)
+        }
+</script>
